@@ -1,23 +1,24 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+
 import './App.css';
 
 function App() {
+  const [investors, setInvestors] = useState([])
+
+  useEffect(() => {
+    fetch('https://youngstartup.io/api/cwebsite/get_speakers_dyn')
+      .then(resp => resp.json())
+      .then(data => {
+        data.speakers.map(x=>{
+          console.log(x.company)
+        })
+
+        setInvestors(data)
+      })
+  }, [])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="main">
+      <h1>TEST</h1>
     </div>
   );
 }
