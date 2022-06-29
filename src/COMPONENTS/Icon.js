@@ -1,7 +1,6 @@
 const Icon = ( { inv,click } )=>{
 
     const fullName = `${inv.firstname} ${inv.lastname}`
-    const company = inv.company
     return (
   
      <div className='icon'>

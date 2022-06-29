@@ -11,6 +11,8 @@ function App() {
   const [invProfile, setInvProfile] = useState({})
   const [modal, setModal] = useState (false)
 
+  ///API call
+
   useEffect(() => {
     fetch('https://youngstartup.io/api/cwebsite/get_speakers_dyn')
       .then(resp => resp.json())
@@ -19,14 +21,16 @@ function App() {
       })
   }, [])
 
+  //VP detection for mobile responsiveness
+
   useEffect(()=>{
     setWindowLength(window.innerWidth)
   },[])
 
-  // ------------------state elements End---------------------
 
   // ------------------Modal Controllers---------------------
 
+  //open
   const openModal = (e)=>{
 
     const targetId = Number(e.target.id)
@@ -39,7 +43,7 @@ function App() {
 
     setModal(!modal)
   }
-
+//close
   const closeModal = () => {
     setInvProfile({})
     setModal(!modal)
@@ -66,7 +70,6 @@ function App() {
           <Icon 
             key={inv.id}
             inv={inv}
-            company={inv.company}
             click={openModal}
           />)}
       </div>
