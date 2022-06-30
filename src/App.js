@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Icon from './COMPONENTS/Icon'
+import Modal from './COMPONENTS/Modal'
 
 function App() {
 
@@ -52,17 +53,12 @@ function App() {
   return (
     <div className="App">
       <h1>MEET OUR 30 FEATURED INVESTORS</h1>
-      {/* ---------------------Modal elements----------------------- */}
-      <div className={modal?"openModal":"closeModal"}>
-        <div className={modal?"openModalContent":"closeModal"}>
-          <h3>{invProfile.firstname +" "+ invProfile.lastname}</h3>
-          <h3>{invProfile.company}</h3>
-          <img src={invProfile.speaker_head_shot_to_display} alt="img" />
-          <p>{invProfile.bio}</p>
-          <button className='closeBtn' onClick={closeModal}>CLOSE</button>
-        </div>
-      </div>
-      {/* ---------------------Modal elements End----------------------- */}
+      {/* ---------------------Modal element----------------------- */}
+      <Modal 
+        modal={modal}
+        data={invProfile}
+        click={closeModal}
+      />
      
      {/* ---------------------Icon Component----------------------- */}
       <div className={ windowLength < 600 ? "grid-2": "grid-5" }>
@@ -78,3 +74,13 @@ function App() {
 }
 
 export default App
+
+{/* <div className={modal?"openModal":"closeModal"}>
+        <div className={modal?"openModalContent":"closeModal"}>
+          <h3>{invProfile.firstname +" "+ invProfile.lastname}</h3>
+          <h3>{invProfile.company}</h3>
+          <img src={invProfile.speaker_head_shot_to_display} alt="img" />
+          <p>{invProfile.bio}</p>
+          <button className='closeBtn' onClick={closeModal}>CLOSE</button>
+        </div>
+      </div> */}
