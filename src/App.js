@@ -22,11 +22,20 @@ function App() {
       })
   }, [])
 
-  //VP detection for mobile responsiveness
+  //VP detection for mobile responsiveness (see - https://stackoverflow.com/questions/68732392/window-width-in-react )
 
   useEffect(()=>{
-    setWindowLength(window.innerWidth)
-  },[])
+    function handleResize() {
+      setWindowLength(window.innerWidth)
+    }
+    window.addEventListener("resize", handleResize)
+    
+    handleResize()
+    
+    return () => { 
+      window.removeEventListener("resize", handleResize)
+    }
+  },[setWindowLength])
 
 
   // ------------------Modal Controllers---------------------
@@ -44,8 +53,9 @@ function App() {
 
     setModal(!modal)
   }
-//close
+  //close
   const closeModal = () => {
+    
     setInvProfile({})
     setModal(!modal)
   }
@@ -59,9 +69,8 @@ function App() {
         data={invProfile}
         click={closeModal}
       />
-     
      {/* ---------------------Icon Component----------------------- */}
-      <div className={ windowLength < 600 ? "grid-2": "grid-5" }>
+      <div className={ windowLength < 700 ? "grid-2": "grid-5" }>
          {investors.map(inv=>
           <Icon 
             key={inv.id}
@@ -74,13 +83,3 @@ function App() {
 }
 
 export default App
-
-{/* <div className={modal?"openModal":"closeModal"}>
-        <div className={modal?"openModalContent":"closeModal"}>
-          <h3>{invProfile.firstname +" "+ invProfile.lastname}</h3>
-          <h3>{invProfile.company}</h3>
-          <img src={invProfile.speaker_head_shot_to_display} alt="img" />
-          <p>{invProfile.bio}</p>
-          <button className='closeBtn' onClick={closeModal}>CLOSE</button>
-        </div>
-      </div> */}
