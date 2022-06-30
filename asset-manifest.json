@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/bh_bsd/static/css/main.465bada7.css",
-    "main.js": "/bh_bsd/static/js/main.c32af83a.js",
-    "index.html": "/bh_bsd/index.html",
-    "main.465bada7.css.map": "/bh_bsd/static/css/main.465bada7.css.map",
-    "main.c32af83a.js.map": "/bh_bsd/static/js/main.c32af83a.js.map"
+    "main.css": "/bhbsd/static/css/main.465bada7.css",
+    "main.js": "/bhbsd/static/js/main.c32af83a.js",
+    "index.html": "/bhbsd/index.html",
+    "main.465bada7.css.map": "/bhbsd/static/css/main.465bada7.css.map",
+    "main.c32af83a.js.map": "/bhbsd/static/js/main.c32af83a.js.map"
   },
   "entrypoints": [
     "static/css/main.465bada7.css",
