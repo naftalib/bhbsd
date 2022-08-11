@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 # bhbsd
 
 ## [live demo here](https://naftalib.github.io/bhbsd/)
