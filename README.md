@@ -1,8 +1,8 @@
+<<<<<<< HEAD
+
 # bhbsd
 
-Interview assignment.
+## [live demo here](https://naftalib.github.io/bhbsd/)
 
-# Summary:
-
-Currently this app is functional and has met all the requirements that were emphasized.
-However, being that this was a coding challenge, I focused mainly on achieving functionality. There is room for refactoring to gain any kind of production level proficiency code.
+This app was an interview assignment for an investment company.
+The requirement was to fetch JSON data containing profiles of investors and create a responsive display of the first 30 profiles. When an image is clicked a modal opens displaying that particular investors details.
