@@ -1,5 +1,3 @@
-# bhbsd
-
 ## [live demo here](https://naftalib.github.io/bhbsd/)
 
 This app was an interview assignment for an investment company.
